@@ -19,11 +19,16 @@
 import MemberList from "../components/admin/MemberList";
 import ProjectsOfMember from "../components/admin/ProjectsOfMember";
 import AddClub from "../components/admin/AddClub";
+import AddList from "../components/admin/ManageActivity";
+import AddCal from "../components/admin/Calendar";
+
 export default {
   components: {
     list: MemberList,
     project: ProjectsOfMember,
-    addClub: AddClub
+    addClub: AddClub,
+    addList: AddList,
+    addCal: AddCal
   },
   computed: {
     page: {

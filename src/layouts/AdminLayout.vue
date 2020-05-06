@@ -52,6 +52,22 @@
             <q-item-label>เพิ่มชมรม</q-item-label>
           </q-item-section>
         </q-item>
+        <q-item clickable tag="a" @click="toAddList">
+          <q-item-section avatar>
+            <q-icon name="arrow_right" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>รายการกิจกรรม</q-item-label>
+          </q-item-section>
+        </q-item>
+        <q-item clickable tag="a" @click="toAddCal">
+          <q-item-section avatar>
+            <q-icon name="arrow_right" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>ปฎิทินกิจกรรม</q-item-label>
+          </q-item-section>
+        </q-item>
       </q-list>
 
       <q-img
@@ -141,6 +157,14 @@ export default {
     },
     toAddClub() {
       this.page = `addClub`;
+      this.$router.push(`/admin`);
+    },
+    toAddList() {
+      this.page = `addList`;
+      this.$router.push(`/admin`);
+    },
+    toAddCal() {
+      this.page = `addCal`;
       this.$router.push(`/admin`);
     }
   },

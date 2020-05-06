@@ -154,18 +154,18 @@ export default {
     this.$q.loading.hide();
   },
   methods: {
-    backToMembers() {
+    async backToMembers() {
        this.$q.loading.show({
       spinner: QSpinnerGears
     });
-    // const snapshot = await firebase
-    //   .firestore()
-    //   .collection(`projects`)
-    //   .doc(this.memberId)
-    //   .get();
+    const snapshot = await firebase
+      .firestore()
+      .collection(`projects`)
+      .doc(this.memberId)
+      .get();
     this.data = snapshot.data().projects;
     this.$q.loading.hide();
-    this.page = `list`;  
+   this.page = `list`;
     },
     viewFile(url) {
       window.open(url);

@@ -37,12 +37,14 @@
 
 <script>
 import Login from "../components/Login";
+import Info from "../components/Info";
 import { animateCSS } from "../utils/animation";
 
 export default {
   name: "PageIndex",
   components: {
-    Login
+    Login,
+    Info
   },
   data() {
     return {
@@ -55,6 +57,9 @@ export default {
   methods: {
     toLogin() {
       this.$router.push(`/login`);
+    },
+    toInfo() {
+      this.$router.push(`/Info`);
     },
     toCal() {
       this.$router.push(`/calendar`);

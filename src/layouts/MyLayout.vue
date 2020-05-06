@@ -14,7 +14,7 @@
          <q-toolbar-title class="q-ma-sm q-ml-lg">
           <div class="text-h6">ระบบจัดการโครงการและบันทึกชั่วโมงกิจกรรมนักศึกษา <span class="text-subtitle1"> ( มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตภูเก็ต )</span></div>
         </q-toolbar-title>
-            <q-btn v-if="!user" flat label="เกี่ยวกับ" icon="info" />
+            <q-btn v-if="!user" flat label="เกี่ยวกับ" icon="info" @click="toInfo"/>
       </div>
       <q-toolbar class="text-dark">
       <div>
@@ -105,12 +105,14 @@
 
 <script>
 import Login from "../components/Login";
+import Info from "../components/Info";
 
 
 export default {
   name: "MyLayout",
   components: {
-    Login
+    Login,
+    Info
   },
   data() {
     return {
@@ -147,6 +149,12 @@ export default {
     toLogin() {
       this.$q.dialog({
         component: Login,
+        parent: this
+      });
+    },
+    toInfo() {
+      this.$q.dialog({
+        component: Info,
         parent: this
       });
     },

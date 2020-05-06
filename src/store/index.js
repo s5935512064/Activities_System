@@ -76,6 +76,8 @@ export default function () {
           user = user.user
           context.commit(`SET_USER`, user)
           if (user.email == `kkte92665@gmail.com`) {
+            const snapshot = await firebase.firestore().collection(`projects`).doc(email).get()
+            context.commit(`SET_PROJECTS_OF_USER`, snapshot.data().projects)
             this.$router.replace(`/admin`)
           } else {
             const snapshot = await firebase.firestore().collection(`projects`).doc(email).get()
