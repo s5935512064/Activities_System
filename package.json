@@ -4,7 +4,7 @@
   "description": "A Quasar Framework app",
   "productName": "PSU Project Management",
   "cordovaId": "org.cordova.quasar.app",
-  "author": "Chittipobng014 <tpl_army@hotmail.com>",
+  "author": "Natthawut_Thippasoet",
   "private": true,
   "scripts": {
     "test": "echo \"No test specified\" && exit 0"

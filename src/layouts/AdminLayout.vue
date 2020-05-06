@@ -15,7 +15,7 @@
           <div class="text-h6">ระบบจัดการโครงการและบันทึกชั่วโมงกิจกรรมนักศึกษา <span class="text-subtitle1"> ( มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตภูเก็ต )</span></div>
         </q-toolbar-title>
 
-            <q-btn flat label="เปลี่ยนภาษา" icon="language"/> 
+            <!-- <q-btn flat label="เปลี่ยนภาษา" icon="language"/>  -->
       </div>
       <q-toolbar class="text-dark">
       <div>

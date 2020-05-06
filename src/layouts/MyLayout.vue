@@ -14,18 +14,34 @@
          <q-toolbar-title class="q-ma-sm q-ml-lg">
           <div class="text-h6">ระบบจัดการโครงการและบันทึกชั่วโมงกิจกรรมนักศึกษา <span class="text-subtitle1"> ( มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตภูเก็ต )</span></div>
         </q-toolbar-title>
-            <q-btn flat label="เกี่ยวกับ" icon="info"/>
-            <q-btn flat label="ติดต่อเรา" icon="phone"/>
-            <q-btn flat label="เปลี่ยนภาษา" icon="language"/> 
+            <q-btn v-if="!user" flat label="เกี่ยวกับ" icon="info" />
       </div>
       <q-toolbar class="text-dark">
       <div>
         <img class="q-mx-sm GPLAY__logo" src="https://i.imgur.com/vKDCndF.png">
       </div>  
       <q-space></q-space>
-        <q-btn flat text-color="dark" label="หน้าแรก" @click="toHome" />
-        <q-btn flat text-color="dark" label="ปฎิทินกิจกรรม" @click="toCal" />
-        <q-btn flat text-color="dark" label="หลักสูตรชั่วโมงกิจกรรม"  />
+        <q-btn v-if="!user" flat text-color="dark" label="หน้าแรก" @click="toHome" />
+        <q-btn v-if="!user" flat text-color="dark" label="ปฎิทินกิจกรรม" />
+        <q-btn v-if="!user" flat text-color="dark" label="เข้าร่วมกิจกรรม" />
+        <q-btn v-if="!user" flat text-color="dark" label="หลักสูตรชั่วโมงกิจกรรม" type="a" href='https://firebasestorage.googleapis.com/v0/b/psu-activity.appspot.com/o/media%2Fn619_ACTIVITY%20TRANSCRIPT.pdf?alt=media&token=669626f1-b16a-4cd4-b973-51e40b6bd385' />
+        <q-btn-dropdown v-if="!user" flat text-color="dark" label="ทรานสคริปกิจกรรม">
+      <q-list>
+        <q-item clickable v-close-popup tag="a" href='https://student.psu.ac.th/TS234/'>
+          <q-item-section >
+            <q-item-label>ระบบทรานสคริปกิจกรรม</q-item-label>
+          </q-item-section>
+        </q-item>
+
+        <q-item clickable v-close-popup tag="a" href='https://transcript.psu.ac.th/'>
+          <q-item-section>
+            <q-item-label>ระบบทรานสคริปกิจกรรมสำหรับนักศึกษารหัส 60 ขึ้นไป</q-item-label>
+          </q-item-section>
+        </q-item>
+
+      </q-list>
+    </q-btn-dropdown>
+        
         <q-btn v-if="!user" color="primary glossy" text-color="white" style="width:150px;" label="ลงชื่อเข้าใช้งาน" @click="toLogin" />
         <q-btn v-if="user" color="primary glossy" text-color="white" style="width:150px;" label="ออกจากระบบ" @click="logout" />  
       </q-toolbar>
@@ -89,6 +105,8 @@
 
 <script>
 import Login from "../components/Login";
+
+
 export default {
   name: "MyLayout",
   components: {
@@ -131,9 +149,6 @@ export default {
         component: Login,
         parent: this
       });
-    },
-    toCal() {
-      this.$router.push(`/calendar`);
     },
     toHome() {
       this.$router.push("/");
