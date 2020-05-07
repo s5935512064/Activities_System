@@ -62,7 +62,7 @@
                 <div class="col q-px-lg offset-md-6">
                   <q-btn color="green" label="อนุมัติ" @click="approve(props.row)" class="q-mr-lg" />
                   <q-btn color="red" label="ไม่อนุมัติ" @click="reject(props.row)" class="q-mr-lg" />
-                  <q-btn color="primary" label="รอการตวจสอบ" @click="pending(props.row)" />
+                  <q-btn color="primary" label="รอการตรวจสอบ" @click="pending(props.row)" />
                 </div>
               </div>
             </q-td>
