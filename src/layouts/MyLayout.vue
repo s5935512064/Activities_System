@@ -22,7 +22,7 @@
       </div>  
       <q-space></q-space>
         <q-btn v-if="!user" flat text-color="dark" label="หน้าแรก" @click="toHome" />
-        <q-btn v-if="!user" flat text-color="dark" label="ปฎิทินกิจกรรม" />
+        <q-btn v-if="!user" flat text-color="dark" label="ปฎิทินกิจกรรม" @click="toCalendar"/>
         <q-btn v-if="!user" flat text-color="dark" label="เข้าร่วมกิจกรรม" />
         <q-btn v-if="!user" flat text-color="dark" label="หลักสูตรชั่วโมงกิจกรรม" type="a" href='https://firebasestorage.googleapis.com/v0/b/psu-activity.appspot.com/o/media%2Fn619_ACTIVITY%20TRANSCRIPT.pdf?alt=media&token=669626f1-b16a-4cd4-b973-51e40b6bd385' />
         <q-btn-dropdown v-if="!user" flat text-color="dark" label="ทรานสคริปกิจกรรม">
@@ -160,6 +160,9 @@ export default {
     },
     toHome() {
       this.$router.push("/");
+    },
+    toCalendar() {
+      this.$router.push("/calendar");
     },
     toProjectList() {
       this.page = `list`;

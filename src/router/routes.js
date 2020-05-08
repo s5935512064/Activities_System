@@ -18,6 +18,11 @@ const routes = [{
         component: () => import('pages/Index.vue')
       },
       {
+        path: '/calendar',
+        name: 'calendar',
+        component: () => import('pages/ShowAct.vue')
+      },
+      {
         path: '/dashboard',
         name: `manage`,
         component: () => import('pages/Dashboard.vue'),

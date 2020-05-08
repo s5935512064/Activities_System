@@ -33,7 +33,7 @@ export default function () {
       drawer: false,
       projectsOfUser: [],
       searchProject: ``,
-      memberId: null
+      memberId: null,
     },
     getters: {
       user: state => state.user,
